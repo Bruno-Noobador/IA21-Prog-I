@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Like do Insta ^^</title>
+    <style>
+
+        body {
+            background-image: url("assets/background.jpg");
+        }
+
+        @font-face 
+        {
+            font-family: 'InstFont';
+            src: url(assets/Billabong.ttf)  format('truetype');
+        }
+
+        header {
+            font-family: 'InstFont';
+            
+        }
+
+        header div:last-child {
+            font-size: x-small;
+        }
+
+        main {
+            user-select: none;
+            border: 0px solid red;
+            /* display: flex; */
+            cursor: pointer;
+            font-size: 5vh;
+        }
+
+        main div {
+            border: 0px solid green;
+            width: 100%;
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        main div:first-child {
+            width: 10vh;
+            height: 10vh;
+            flex: none;
+            position: relative;
+            border: 0 none;
+            /* background-image: url(assets/Cookie.svg); */
+            
+            /* background-color: gray;
+            transform: rotate(45deg) scale(.5);
+            transition: .3s; */
+            /* transition: 300ms; */
+        }
+
+        main div:first-child:hover {
+            width: calc(10vh + 1%);
+            height: calc(10vh + 1%);
+        }
+
+        main div:first-child:before,
+        div:first-child:after {
+            content: " ";
+            background-color: inherit;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        main div:first-child:before {
+            top: -50%;
+            left: 0%;
+        }
+
+        main div:first-child:after {
+            top: 0%;
+            left: -50%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            Cookie Game where You CLick on the Cookie&#8482;
+        </div>
+        <div>
+            An Original Ideia never before seen
+        </div>
+    </header>
+    <main>
+        <div><img src="assets/Cookie.svg" alt=""> </div>
+        <div>0</div>
+    </main>
+    <script>
+        const domMain = document.querySelector("main")
+        // const domDivNum = document.querySelector("main div:last-child")
+        const domDivNum = domMain.querySelector("div:last-child")
+        let counter = 0
+        domMain.addEventListener("click", () => {
+            counter++
+            domDivNum.innerHTML = counter
+        })
+    </script>
+</body>
+
+</html>
